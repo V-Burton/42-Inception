@@ -47,6 +47,7 @@ services:
     expose:
     - 9000
 
+
 volumes:
   wordpress:
     driver: local
