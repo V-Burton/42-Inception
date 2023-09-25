@@ -24,5 +24,3 @@ RUN chmod 755 /var/run/nginx
 RUN chown -R www-data:www-data /var/run/nginx
 
 CMD [ "nginx", "-g", "daemon off;" ]
-
-
