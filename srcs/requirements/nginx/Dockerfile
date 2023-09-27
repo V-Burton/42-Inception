@@ -6,7 +6,7 @@ RUN apt install	vim -y
 RUN apt install	curl  -y
 
 RUN	mkdir -p /etc/nginx/ssl
-RUN openssl req -x509 -nodes -out /etc/nginx/ssl/vburton42.fr.crt -keyout /etc/nginx/ssl/vburton42.fr.key -subj "/C=FR/ST=IDF/L=Paris/O=42/OU=42/CN=vburton.42.fr/UID=login"
+RUN openssl req -x509 -nodes -out /etc/nginx/ssl/inception.crt -keyout /etc/nginx/ssl/inception.key -subj "/C=FR/ST=IDF/L=Paris/O=42/OU=42/CN=vburton.42.fr/UID=victor"
 RUN mkdir -p /var/run/nginx
 
 RUN rm /etc/nginx/sites-enabled/default

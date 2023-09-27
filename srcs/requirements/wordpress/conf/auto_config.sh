@@ -1,5 +1,7 @@
 sleep 10;
 
+wp core download --path="/var/www/html/wordpress" --allow-root
+
 wp config create	--allow-root \
 					--dbname=$SQL_DATABASE \
 					--dbuser=$SQL_USER \
