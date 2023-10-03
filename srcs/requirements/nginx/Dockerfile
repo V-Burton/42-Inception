@@ -1,10 +1,11 @@
-FROM debian:buster
+FROM debian:bullseye
 
 RUN apt-get update -y && \
     apt-get upgrade -y && \
     apt-get install gettext -y && \
     apt-get install nginx -y && \
     apt-get install openssl -y && \
+    apt install default-mysql-client -y && \
     rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /etc/nginx/ssl

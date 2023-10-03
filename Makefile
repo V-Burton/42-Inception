@@ -30,6 +30,7 @@ clean:    stop
 		docker volume rm $(addprefix srcs_, $(VOLUMES_DIR)) -f
 		docker volume prune -f
 		rm -rf $(VOLUMES_PATH)
+		docker compose -f srcs/docker-compose.yml down --volumes --rmi all
 
 # Removes all unused Docker objects including images, containers, volumes,
 # and networks without confirmation.

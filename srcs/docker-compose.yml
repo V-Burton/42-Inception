@@ -7,7 +7,7 @@ services:
     networks:
       - inception
     build:
-      context: requirements/mariadb
+      context: ./requirements/mariadb
       dockerfile: Dockerfile
       args:
         SQL_DATABASE: $SQL_DATABASE
@@ -31,14 +31,14 @@ services:
     depends_on:
       - wordpress
     build:
-      context: requirements/nginx
+      context: ./requirements/nginx
       dockerfile: Dockerfile
       args:
         WP_URL: $WP_URL
         WP_PATH: $WP_PATH
     env_file: .env
     ports:
-      - "443:443"
+      - 443:443
     restart: on-failure
 
   wordpress:

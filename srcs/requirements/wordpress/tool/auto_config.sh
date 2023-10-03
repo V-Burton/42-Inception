@@ -24,4 +24,4 @@ if [ ! -f "/var/www/wordpress/wp-config.php" ]; then
 fi
 
 mkdir -p /run/php/
-/usr/sbin/php-fpm7.3 -F
+/usr/sbin/php-fpm7.4 -F
