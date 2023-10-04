@@ -2,7 +2,7 @@ ENV_FILE        := ./srcs/.env
 DOCKER_FILE        := ./srcs/docker-compose.yml
 
 VOLUMES_DIR        := mariadb wordpress
-VOLUMES_PATH    := ${HOME}/data/inception_data
+VOLUMES_PATH    := /home/vburton/data/inception_data/
 VOLUMES            := $(addprefix $(VOLUMES_PATH)/, $(VOLUMES_DIR))
 
 all: stop load
@@ -29,12 +29,12 @@ stop:
 clean:    stop
 		docker volume rm $(addprefix srcs_, $(VOLUMES_DIR)) -f
 		docker volume prune -f
-		rm -rf $(VOLUMES_PATH)
+		rm -rf $(VOLUMES_PATH)/*
 		docker compose -f srcs/docker-compose.yml down --volumes --rmi all
 
 # Removes all unused Docker objects including images, containers, volumes,
 # and networks without confirmation.
-prune:    clean
+prune:	clean
 		docker system prune -af
 
 re: prune debug # load

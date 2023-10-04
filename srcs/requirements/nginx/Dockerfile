@@ -1,5 +1,8 @@
 FROM debian:bullseye
 
+ARG WP_PATH
+ARG WP_URL
+
 RUN apt-get update -y && \
     apt-get upgrade -y && \
     apt-get install gettext -y && \

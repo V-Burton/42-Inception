@@ -1,6 +1,10 @@
-sleep 10
+sleep 5
+chmod -R 775 /var/www/wordpress;
+
 
 if [ ! -f "/var/www/wordpress/wp-config.php" ]; then
+    
+    wp core download --path=$WP_PATH --allow-root
 
     wp config create	--dbname=$SQL_DATABASE \
 						--dbuser=$SQL_USER \
@@ -13,12 +17,11 @@ if [ ! -f "/var/www/wordpress/wp-config.php" ]; then
                     --title=$WP_TITLE \
                     --admin_user=$WP_ADMIN_USER \
                     --admin_password=$WP_ADMIN_PASSWORD \
-                    --admin_mail=$WP_EMAIL \
+                    --admin_email=$WP_ADMIN_EMAIL \
                     --allow-root \
                     --path=$WP_PATH
 
     wp user create $WP_USER $WP_USER_EMAIL \
-                    --password=$USER_PASSWORD \
                     --allow-root \
                     --path=$WP_PATH
 fi
