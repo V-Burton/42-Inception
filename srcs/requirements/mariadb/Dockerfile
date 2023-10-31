@@ -17,7 +17,7 @@ RUN service mariadb start && \
                         GRANT ALL PRIVILEGES ON $SQL_DATABASE.* TO $SQL_USER@'%' IDENTIFIED BY '$SQL_PASSWORD'; \
                         ALTER USER 'root'@'localhost' IDENTIFIED BY '$SQL_ROOT_PASSWORD'; \
                         FLUSH PRIVILEGES;" && \
-                        mysqladmin -u root -p$SQL_ROOT_PASSWORD SHUTDOWN
+                        mysqladmin -u root -p $SQL_ROOT_PASSWORD SHUTDOWN
 
 CMD ["mysqld_safe"]
 

@@ -1,7 +1,7 @@
 ENV_FILE        := ./srcs/.env
 DOCKER_FILE        := ./srcs/docker-compose.yml
 
-VOLUMES_DIR        := mariadb wordpress
+VOLUMES_DIR        := srcs_mariadb srcs_wordpress
 VOLUMES_PATH    := /home/vburton/data/inception_data/
 VOLUMES            := $(addprefix $(VOLUMES_PATH)/, $(VOLUMES_DIR))
 
