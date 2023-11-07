@@ -22,6 +22,7 @@ if [ ! -f "/var/www/wordpress/wp-config.php" ]; then
                     --path=$WP_PATH
 
     wp user create $WP_USER $WP_USER_EMAIL \
+                    --user_pass=$WP_USER_PASSWORD \
                     --allow-root \
                     --path=$WP_PATH
 fi
